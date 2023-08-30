@@ -1,38 +1,451 @@
-.App {
+
+  @import url('https://fonts.googleapis.com/css2?family=Almarai:wght@300;400;700&family=Asap:wght@400;500;700&family=Nunito:wght@200;400;600&family=Poppins:ital,wght@0,300;0,400;0,500;1,400&family=Roboto:wght@100;300;400;500;700&display=swap');
+
+  *{
+    font-family: 'Poppins',sans-serif;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style-type: none;
+    margin: 0;
+    scroll-behavior: smooth;
+   
+  }
+  .sidebar{
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #0b1218;
+    width: 250px;
+  }
+  .brand
+  {
+    color: orange;
+    padding: 1rem 2rem;
+    display: flex;
+ align-items: center;
+ font-size: 40px;
+ justify-content: center;
+ height: 70px;
+
+  }
+  .side-user
+  {
+    margin: 1.8rem .0;
+   
+
+  }
+  .side-img
+  {
+    height: 120px;
+    width: 120px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin: auto;
+    border: 4px solid #3e454d;
+    border-radius: 50%;
+
+  }
+
+
+.side-img img
+{
+  max-width: 100%;
+  margin: auto;
+
+}
+.user {
+  text-align: center;
+  color: #fff;
+ margin-top:0.5rem ;
+
+}
+.user small
+{
+  display: inline-block;
+  color: orange;
+ 
+}
+.sidemenu 
+{
+  padding:.5 rem;
+}
+.sidemenu  li
+{
+  margin-bottom: 2rem;
+  color: #ffff;
+  font-size: 1.3rem;
+  display: flex;
+  align-items: center;
+  padding:0rem .5rem ;
+  cursor: pointer;
+
+}
+.sidemenu  li:hover
+{
+  background-color: orange;
+  color: #fff;
+border-radius: 50px;
+  
+
+}
+.sidemenu  ul
+{
+  padding-top: 2rem;
+}
+   #active
+{
+  background-color: orange;
+  color: #fff;
+border-radius: 50px;}
+.sidemenu  li a
+{
+  color: #fff;
+  text-decoration: none;
+
+}
+
+.main-content
+{
+
+  margin-left: 260px;
+  
+ 
+}
+.flex
+{
+  display: flex;
+  gap: 50px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.meta
+{
+  color: blue;
+}
+.no-data
+{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+font-size: 17px;
+font-weight: bold;}
+.container
+{
+  display: flex;
+  flex-direction: column;
+  
+  margin: 20px auto;
+
+
+
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  
+  justify-content: center;
+ 
+  padding: 25px;
+  
+}
+
+.questions-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+ justify-content: center;
+ 
+  margin-top: 40px;
+
+  
+ 
+}
+
+.question {
+  margin-bottom: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; 
+}
+.title
+{
+  font-size: 25px;
+  font-weight: bold;
+  margin-top: 40px;
+ 
+}
+.answers
+{
+  margin-top: 30px;
+  padding-top: 20px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  
+  
+
+  
+}
+.answer
+{
+  background-color: #f0f5f5;
+  margin-top: 20px;
+  border-radius:50px;
+  padding:  10px 20px;
+  
+  height: 50px;
+  cursor: pointer;
+  
+}
+.radiob
+{
+  margin-right: 10px;
+  cursor: pointer;
+}
+.span{
+  margin-top: 40px;
+  font-size: 15px;
+  color: orange;
+  font-weight: 700;
+}
+.btns
+{
+  display: flex;
+justify-content: space-between;
+  margin-top: 70px;
+  align-items: center;
+ 
+  
+}
+.btn-Next
+{
+ background-color: #80b3ff;
+ padding: 20px;
+ border-radius: 50px;
+ padding-left: 50px;
+ padding-right: 50px;
+ text-align: center;
+ 
+}
+.btn-Previous
+{
+ background-color: #80b3ff;
+padding: 20px;
+ border-radius: 50px;
+ padding-left: 50px;
+ padding-right: 50px; 
+}
+.btn-finish
+{
+  background-color: red;
+  padding: 20px;
+ border-radius: 50px;
+ padding-left: 50px;
+ padding-right: 50px;
+}
+.btn-prev
+{
+  background-color: black;
+padding: 20px;
+ border-radius: 50px;
+ padding-left: 50px;
+ padding-right: 50px;
+
+}
+.container-result
+{
+  background-color: #985FE1;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  
+  
+}
+.con-image {
+  width: 100%;
+  max-width: 200px;
+  margin-top: 80px;
+  z-index: 1;
+
+
+
+  
+}
+
+.con-image img {
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  
+  
+ 
+  
+ 
+ 
+}
+.content
+{
+  margin-top: 10px;
+}
+.content .title
+{
+  color: #fff;
+  font-size: 25px;
+  font-weight: 500;
+  text-align: center;
+
+}
+.content small
+{
+  font-weight: bold;
   text-align: center;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.score
+{
+  margin-top: 5px;
+  color: green;
+  font-size: 40px;
+  font-weight: bold;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.cont
+{
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
-
-.App-link {
-  color: #61dafb;
+.options
+{
+  width: 100%;
+  margin-top: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
+.corr
+{
+  color: green;
+}
+.clear
+{
+  color: red;
+}
+.correct
+{
+  background-color:#D6C1F3 ;
+  
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius:50px;
+  padding:  10px 20px;
+  margin-right: 50px;
+  
+}
+.incorrect
+{
+  background-color:#D6C1F3 ;
+  
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius:50px;
+  padding:  10px 20px;
+  margin-left: 50px;
+  
+}
+.next-quiz
+{
+  margin-top: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+}
+.next-btn
+{
+  background-color:white;
+  border-radius:50px;
+  padding:  10px 20px;
+}
+.options p
+{
+  margin-left: 5px;
+}
+.titles
+{
+  color: black;
+  text-align: center;
+  font-size: 25px;
+  font-weight: 500;
+
+}
+.scores
+{
+  margin-top: 5px;
+  color: red;
+  font-size: 40px;
+  font-weight: bold;
+}
+.incorrects
+{
+  background-color:#8dd3bd ;
+  
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius:50px;
+  padding:  10px 20px;
+  margin-right: 50px;
+}
+.corrects
+{
+  background-color:#8dd3bd  ;
+  
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius:50px;
+  padding:  10px 20px;
+  margin-left: 70px;
+  
+}
+.optionss
+{
+  width: 100%;
+  margin-top: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.optionss p
+{
+  margin-left: 5px;
+}
+.next-btns
+{
+  background-color:#8dd3bd ;
+  border-radius:50px;
+  padding:  30px;
+}
+.buttonback
+{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+ 
+}
+.bt
+{
+  padding: 20px;
+  background-color: #8dd3bd ;
+  border-radius: 50px;
 }
