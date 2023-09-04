@@ -5,9 +5,11 @@ import App from './App';
 import { configureStore } from '@reduxjs/toolkit';
 import { Provider } from 'react-redux'
 import quizreducer from './Features/quizSlice';
+import userreducer from './Features/userSlice';
 const store=configureStore({
   reducer:{
-    quiz:quizreducer
+    quiz:quizreducer,
+    user:userreducer
   }
 })
 

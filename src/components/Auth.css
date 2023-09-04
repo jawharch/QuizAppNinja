@@ -1,0 +1,155 @@
+
+.containerAuth
+{
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    margin-top: 100px;
+    background-color: antiquewhite;
+   
+    padding-bottom: 30px;
+    width: 450px;
+    border-radius: 15px;
+   
+   
+    
+}
+.header
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    gap: 9px;
+    margin-top: 30px;
+}
+.text
+{
+    color: #3c009d;
+    font-size: 48px;
+    font-weight: 700;
+}
+.underline
+{
+    width:61px ;
+    background-color:#3c009d ;
+    height: 6px;
+    border-radius: 9px;
+}
+.inputs
+{
+    margin-top: 55px;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    
+   
+}
+.input
+{
+    display: flex;
+    align-items: center;
+    margin: auto;
+    width: 300px;
+    height: 80px;
+    
+    
+    border-radius: 6px;
+
+}
+.img
+{
+    margin: 0px 10px;
+}
+.textfield
+{
+    height: 50px;
+    width: 400px;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 19px;
+}
+.forgotpassword
+{
+    padding-left: 25px;
+    margin-top: 27px;
+    color: #797979;
+    font-size: 18px;
+    align-self: center;
+    
+}
+.forgotpassword span
+{
+    color:#4c00b4;
+    cursor: pointer;
+}
+.submit-container
+{
+    display: flex;
+    gap: 30px;
+    margin: 60px auto;
+}
+.submit
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 120px;
+    height: 59px;
+    color: #fff;
+    background-color: #4c00b4;
+    border-radius: 50px;
+    font-size: 19px;
+    font-weight: 700;
+    cursor: pointer;
+}
+.gray
+{
+    background-color: #eaeaea;
+    color: #676767;
+
+}
+.error-container
+{
+    
+    font-size: 12px;
+    text-align: center;
+    color: red;
+    position: relative;
+  
+}
+.error
+{
+   
+   text-align: center;
+   position: absolute;
+   bottom:  15px;
+   left: 50px;
+  
+}
+.submitb
+{
+    background-color: #4c00b4;
+    color: #fff;
+    width: 100px;
+    height: 30px;
+    border-radius: 50px;
+    
+    
+    
+
+}
+.submitb[disabled] {
+    background-color: #ccc; 
+    color: #666; 
+    cursor: not-allowed;
+  }
+.form
+ {
+    display: flex;
+    flex-direction:column ;
+    align-items: center;
+
+
+ }
