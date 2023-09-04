@@ -5,12 +5,13 @@ import { TextField } from '@mui/material';
 import PersonIcon from '@mui/icons-material/Person';
 import EmailIcon from '@mui/icons-material/Email';
 import LockIcon from '@mui/icons-material/Lock';
-import { login } from '../apiCalls';
+import { login, signup } from '../apiCalls';
 import { useDispatch } from 'react-redux';
 import { useForm } from 'react-hook-form';
 import { DevTool } from '@hookform/devtools';
 import { CleanHands } from '@mui/icons-material';
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
 
 const Auth = () => {
@@ -28,25 +29,31 @@ const Auth = () => {
   const {register,control,handleSubmit,formState,getValues}=form
   const {errors,isDirty,isValid}=formState
   const dispatch=useDispatch()
+  const navigate=useNavigate()
    const [action, setaction] = useState("Login")
    const [username, setusername] = useState("")
    const [email, setemail] = useState("")
    const [password, setpassword] = useState("")
+   const data = getValues;
 
-  const handleLoginClick=(e)=>
+  const handleClick=(e)=>
    {
-    e.preventDefault()
-   
-    login(dispatch,{username,password})
+    if(action==="Login")
+    {
+      login(dispatch,e)
+      navigate('/')
 
-   }
-   const  onSubmit=(data)=>
-   {
-    console.log('form submitted',data)
-   }
-   const handleSignUpClick=(e)=>
-   {
-    e.preventDefault()
+    }
+    else
+    {
+      signup(dispatch,e)
+      setaction('Login')
+      
+
+    }
+    
+    
+
    }
   
   return (
@@ -55,7 +62,7 @@ const Auth = () => {
         <div className='text'>{action}</div>
         <div className="underline"></div>
       </div>
-      <form  className='form'onSubmit={handleSubmit(onSubmit)} noValidate>
+      <form  className='form' onSubmit={handleSubmit(handleClick)} noValidate>
       <Stack  className='inputs' >
         <div className='input'>
           <PersonIcon className='img'></PersonIcon>
@@ -66,7 +73,12 @@ const Auth = () => {
             type="text" className='textfield'
             onChange={(e)=>setusername(e.target.value)} 
             {...register("username",{
-              required:'username is required '
+              required:'username is required ',
+              maxLength:
+              {
+                value:8,
+                message:"must be 8 characters"
+              }
             })}
            
             />
@@ -90,16 +102,20 @@ const Auth = () => {
                   pattern: {
                     value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
                     message: "Invalid email format"
+                    
                   },
+                  
                   validate: {
                     notAdmin: (fieldValue) => {
                       return fieldValue !== "admin@gmail.com" || "Enter a different email address";
                     },
                     // emailAvailable: async (fieldValue) => {
-                    //   const data = await axios.post('http://localhost:5001/user/email-check', fieldValue);
+                    //   const data = await axios.post('http://localhost:5001/user/email-check', {email:fieldValue});
+                      
                     //   return data.length === 0 || "Email Already Exists";
                     // }
-                  }
+                  },
+                 
                 }
                 
                  )}
@@ -120,7 +136,19 @@ const Auth = () => {
             label="password"
             type="password"  className='textfield'
             onChange={(e)=>setpassword(e.target.value)}
-            {...register("password")}
+            {...register("password",
+             {
+              
+              maxLength:
+              {
+                value:8,
+                message:"must be 8 characters"
+              }
+              
+             }
+            
+            
+            )}
             
             /></div>
             <div className='error-container'>
@@ -130,7 +158,7 @@ const Auth = () => {
 
       </Stack>
       
-      <button  onClick={action ==="Login"? handleLoginClick:handleSignUpClick} className='submitb' disabled={!isDirty ||  !isValid} >submit</button>
+      <button  type='submit' className='submitb' disabled={!isDirty ||  !isValid} >submit</button>
       </form>
       <DevTool control={control}/>
       <div className="forgotpassword">Lost Password? <span>click here</span></div>

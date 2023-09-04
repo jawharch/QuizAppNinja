@@ -52,7 +52,7 @@ const handleAnswerChange=(value,i)=>
  
 
 }
-const completedPer=(currQuesIndex/questionsArray.length)*100
+const completedPer= currQuesIndex !==5?((currQuesIndex/questionsArray.length)*100):100
 
 
 

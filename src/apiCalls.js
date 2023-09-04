@@ -16,3 +16,18 @@ export const login = async(dispatch,user)=>
 
 
 }
+export const signup = async(dispatch,user)=>
+{
+    dispatch(loginStart())
+    try {
+        const res=await axios.post('http://localhost:5001/auth/register',user)
+        console.log(res)
+        dispatch(loginSuccess(res.data))
+        
+    } catch (err) {
+        console.log(err)
+        dispatch(loginFail())
+    }
+
+
+}
