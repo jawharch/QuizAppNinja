@@ -8,6 +8,7 @@ import Sidebar from './components/Sidebar';
 import { BrowserRouter as Router,Routes,Route} from 'react-router-dom';
 import Test from './components/Test';
 import Result from './components/Result';
+import { routes } from './config';
 
 function App() {
   return (
@@ -17,12 +18,11 @@ function App() {
      <Router>
       
       <Routes>
-        <Route path='/' element={<Dashboard/>}/>
-        <Route path='/quizs' element={<Quiz/>}/>
-        <Route path='/auth' element={<Auth/>}/>
-        <Route path='/report' element={<Report/>}/>
-        <Route path='/quiz/:cat' element={<Test/>}/>
-        <Route path='/result/:cat' element={<Result/>}/>
+        
+        {routes.map((item,i)=>
+        (
+          <Route  key={i}  exact={item.exact} path={item.path} element={item.element }/>
+        ))}
 
       </Routes>
       

@@ -10,7 +10,7 @@ import SearchIcon from '@mui/icons-material/Search';
 import Meta from 'antd/es/card/Meta';
 import { Card } from 'antd';
 import { Link } from 'react-router-dom';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { resetQuiz } from '../Features/quizSlice';
 
 
@@ -18,6 +18,8 @@ const Dashboard = () => {
   const dispatch=useDispatch()
   const [input,setinput]=useState("")
   const searchdata=Data.filter((item)=>item.name.includes(input))
+
+  
 
   return (
     
