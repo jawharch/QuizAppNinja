@@ -28,10 +28,19 @@ const userSlice=createSlice(
                 state.isFetching=false
                 state.error=true
 
+            },
+            resetUser:(state,action)=>
+            {
+                localStorage.removeItem('user')
+                return{
+                    
+                    ...initialState
+                }
+
             }
 
         }
     }
 )
-export const { loginFail, loginStart, loginSuccess} = userSlice.actions;
+export const { loginFail, loginStart, loginSuccess,resetUser} = userSlice.actions;
 export default userSlice.reducer

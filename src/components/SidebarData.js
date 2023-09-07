@@ -2,7 +2,7 @@
 import DashboardIcon from '@mui/icons-material/Dashboard';
 import QuizIcon from '@mui/icons-material/Quiz';
 import HowToRegIcon from '@mui/icons-material/HowToReg';
-import ReportIcon from '@mui/icons-material/Report';
+
 export const SidebarData=[
 
 
@@ -21,10 +21,5 @@ export const SidebarData=[
         icon:<HowToRegIcon/>,
         link:'/auth'
     },
-    {
-        title:"Report",
-        icon:<ReportIcon/>,
-        link:'/report'
-    },
-
+    
 ]

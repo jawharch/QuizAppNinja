@@ -1,8 +1,12 @@
 import React from 'react'
 import { SidebarData } from './SidebarData'
 import { Link, useLocation } from 'react-router-dom'
+import { useSelector } from 'react-redux'
 const Sidebar = () => {
   const location=useLocation()
+  const {currentUser}=useSelector(state=>state.user)
+  const filtersidebarData=SidebarData.filter((item)=>item.title!=="Authentication")
+
   return (
     <div className='sidebar'>
         <div className='brand'>
@@ -11,16 +15,17 @@ const Sidebar = () => {
         </div>
         <div className="sidemenu">
           <div className="side-user">
-          <div className='side-img' style={{ backgroundImage: "url('user.jpeg')" }}></div>
+          <div className='side-img' style={{ backgroundImage: "url('cong.png')" }}></div>
             <div className="user">
-              <small>Jawhar Chouri</small>
-              <p>Developer</p>
+              {currentUser &&(
+                <strong style={{ fontSize:'40px'}}>{currentUser.username}</strong>
+              )}
+              
               
             </div>
           </div>
           <ul>
-            {
-              SidebarData.map((item,i)=>
+            { !currentUser ?( SidebarData.map((item,i)=>
               (
                 <Link to={item.link}  key={i}>
                  <li key={i} id={location.pathname === item.link ? "active" : ""}>
@@ -30,7 +35,20 @@ const Sidebar = () => {
               </Link>
             </li>
                 </Link>
-              ))
+              ))):(
+                filtersidebarData.map((item,i)=>
+                (
+                  <Link to={item.link}  key={i}>
+                   <li key={i} id={location.pathname === item.link ? "active" : ""}>
+                <Link to={item.link}>
+                  <span>{item.icon}</span>
+                  <span>{item.title}</span>
+                </Link>
+              </li>
+                  </Link>
+                ))
+              )
+             
             }
 
           </ul>
